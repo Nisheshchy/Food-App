@@ -50,5 +50,3 @@ The application has been recently transformed from a simple landing page into a 
    ```bash
    npm start
    ```
-
-The application will be running at `http://localhost:3000/`.
