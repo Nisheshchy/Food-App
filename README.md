@@ -1,8 +1,8 @@
-# Food App 🍔
+# Food App
 
 A simple, modern, and fully responsive restaurant landing page and e-commerce platform built from scratch using React.js, Material UI (MUI), React Router, and React Icons.
 
-## ✨ New Features & Updates
+##  New Features & Updates
 The application has been recently transformed from a simple landing page into a fully functional frontend e-commerce solution:
 
 - **Global Cart Management**: Implemented React Context (`CartContext`) to manage global cart state, synced with `localStorage` for data persistence.
@@ -15,7 +15,7 @@ The application has been recently transformed from a simple landing page into a 
 - **Dynamic Navbar Badge**: A responsive Material UI badge that updates in real-time to show the number of items in the cart.
 - **Premium Responsive Design**: Flawlessly optimized across 4 custom breakpoints ensuring a perfect experience on desktops, tablets, and mobile devices.
 
-## 🛠️ Tech Stack
+##  Tech Stack
 - **Framework**: React.js
 - **Routing**: React Router v6
 - **State Management**: React Context API & Custom Hooks
@@ -24,7 +24,7 @@ The application has been recently transformed from a simple landing page into a 
 - **UI Components**: Material UI (MUI)
 - **Fonts**: Reem Kufi via Google Fonts
 
-## 🚀 Installation & Setup
+##  Installation & Setup
 
 1. **Clone the repository:**
    ```bash
