@@ -18,6 +18,8 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [openMenu, setOpenMenu] = useState(false);
@@ -25,35 +27,48 @@ const Navbar = () => {
     {
       text: "Home",
       icon: <HomeIcon />,
+      link: "/",
     },
     {
       text: "About",
       icon: <InfoIcon />,
+      link: "/about",
+    },
+    {
+      text: "Menu",
+      icon: <RestaurantMenuIcon />,
+      link: "/menu",
     },
     {
       text: "Testimonials",
       icon: <CommentRoundedIcon />,
+      link: "/testimonials",
     },
     {
       text: "Contact",
       icon: <PhoneRoundedIcon />,
+      link: "/contact",
     },
     {
       text: "Cart",
       icon: <ShoppingCartRoundedIcon />,
+      link: "/#cart",
     },
   ];
   return (
     <nav>
       <div className="nav-logo-container">
-        <img src={Logo} alt="" />
+        <Link to="/">
+          <img src={Logo} alt="" />
+        </Link>
       </div>
       <div className="navbar-links-container">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#testimonials">Testimonials</a>
-        <a href="#contact">Contact</a>
-        <a href="#cart">
+        <Link to="/">Home</Link>
+        <Link to="/menu">Menu</Link>
+        <Link to="/about">About</Link>
+        <Link to="/testimonials">Testimonials</Link>
+        <Link to="/contact">Contact</Link>
+        <a href="/#cart">
           <BsCart2 className="navbar-cart-icon" />
         </a>
         <button className="primary-button">Bookings Now</button>
@@ -70,7 +85,7 @@ const Navbar = () => {
           <List>
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
-                <ListItemButton>
+                <ListItemButton component={Link} to={item.link}>
                   <ListItemIcon>{item.icon}</ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
