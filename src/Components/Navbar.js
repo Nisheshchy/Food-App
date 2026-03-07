@@ -20,8 +20,11 @@ import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
 import RestaurantMenuIcon from "@mui/icons-material/RestaurantMenu";
 import { Link } from "react-router-dom";
+import { useCart } from "../Context/CartContext";
+import Badge from "@mui/material/Badge";
 
 const Navbar = () => {
+  const { totalItems } = useCart();
   const [openMenu, setOpenMenu] = useState(false);
   const menuOptions = [
     {
@@ -52,7 +55,7 @@ const Navbar = () => {
     {
       text: "Cart",
       icon: <ShoppingCartRoundedIcon />,
-      link: "/#cart",
+      link: "/cart",
     },
   ];
   return (
@@ -68,9 +71,11 @@ const Navbar = () => {
         <Link to="/about">About</Link>
         <Link to="/testimonials">Testimonials</Link>
         <Link to="/contact">Contact</Link>
-        <a href="/#cart">
-          <BsCart2 className="navbar-cart-icon" />
-        </a>
+        <Link to="/cart" className="navbar-cart-link">
+          <Badge badgeContent={totalItems} color="primary">
+            <BsCart2 className="navbar-cart-icon" />
+          </Badge>
+        </Link>
         <button className="primary-button">Bookings Now</button>
       </div>
       <div className="navbar-menu-container">
@@ -86,7 +91,15 @@ const Navbar = () => {
             {menuOptions.map((item) => (
               <ListItem key={item.text} disablePadding>
                 <ListItemButton component={Link} to={item.link}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
+                  <ListItemIcon>
+                    {item.text === "Cart" ? (
+                      <Badge badgeContent={totalItems} color="primary">
+                        {item.icon}
+                      </Badge>
+                    ) : (
+                      item.icon
+                    )}
+                  </ListItemIcon>
                   <ListItemText primary={item.text} />
                 </ListItemButton>
               </ListItem>

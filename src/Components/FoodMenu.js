@@ -1,10 +1,31 @@
 /** @format */
 
-import React from "react";
+import React, { useState } from "react";
 import ShrimpTempura from "../Assets/shrimp-tempura-recipe-8.jpg";
 import ChickenTikka from "../Assets/Chicken-Tikka-Masala_0-SQ.webp";
+import { useCart } from "../Context/CartContext";
+import { FiCheckCircle, FiSearch } from "react-icons/fi";
 
 const FoodMenu = () => {
+    const { addToCart } = useCart();
+    const [showToast, setShowToast] = useState(false);
+    const [searchTerm, setSearchTerm] = useState("");
+    const [activeCategory, setActiveCategory] = useState("All");
+
+    const handleAddToCart = (item) => {
+        // Clean price string to number
+        const numericPrice = parseFloat(item.price.replace("$", ""));
+        addToCart({
+            id: item.title, // Using title as ID since unique IDs aren't provided
+            name: item.title,
+            price: numericPrice,
+            image: item.image
+        });
+
+        setShowToast(true);
+        setTimeout(() => setShowToast(false), 3000);
+    };
+
     const menuItems = [
         {
             image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=500&auto=format&fit=crop&q=60",
@@ -152,32 +173,103 @@ const FoodMenu = () => {
         },
     ];
 
+    const categories = ["All", ...Array.from(new Set(menuItems.map(item => item.category)))];
+
+    const filteredItems = menuItems.filter(item => {
+        const matchesSearch = item.title.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesCategory = activeCategory === "All" || item.category === activeCategory;
+        return matchesSearch && matchesCategory;
+    });
+
     return (
         <div className="menu-page-wrapper">
             <div className="work-section-top">
                 <p className="primary-subheading">Menu</p>
                 <h1 className="primary-heading">Our Full Range</h1>
                 <p className="primary-text">
-                    Choose from our {menuItems.length} specially curated dishes, prepared fresh every day
+                    Choose from our specially curated dishes, prepared fresh every day
                     by our master chefs.
                 </p>
             </div>
+
+            {/* Enhanced Filtering & Search Section */}
+            <div className="menu-filters-container">
+                <div className="search-bar-wrapper">
+                    <FiSearch className="search-icon" />
+                    <input
+                        type="text"
+                        placeholder="Search for your favorite dish..."
+                        className="menu-search-input"
+                        value={searchTerm}
+                        onChange={(e) => setSearchTerm(e.target.value)}
+                    />
+                </div>
+
+                <div className="category-filters-scroll">
+                    <div className="category-filters">
+                        {categories.map((category, index) => (
+                            <button
+                                key={index}
+                                className={`category-filter-btn ${activeCategory === category ? 'active' : ''}`}
+                                onClick={() => setActiveCategory(category)}
+                            >
+                                {category}
+                            </button>
+                        ))}
+                    </div>
+                </div>
+            </div>
+
             <div className="work-section-bottom">
-                {menuItems.map((item, index) => (
-                    <div className="work-section-info" key={index}>
-                        <div className="info-boxes-img-container" style={{ position: "relative" }}>
-                            <img src={item.image} alt={item.title} />
-                            <span className="category-badge">{item.category}</span>
+                {filteredItems.length > 0 ? (
+                    filteredItems.map((item, index) => (
+                        <div className="work-section-info" key={index}>
+                            <div className="info-boxes-img-container" style={{ position: "relative" }}>
+                                <img src={item.image} alt={item.title} />
+                                <span className="category-badge">{item.category}</span>
+                            </div>
+                            <h2>{item.title}</h2>
+                            <p className="menu-price">{item.price}</p>
+                            <p>{item.text}</p>
+                            <button
+                                className="secondary-button"
+                                style={{ marginTop: "1rem" }}
+                                onClick={() => handleAddToCart(item)}
+                            >
+                                Order Now
+                            </button>
                         </div>
-                        <h2>{item.title}</h2>
-                        <p className="menu-price">{item.price}</p>
-                        <p>{item.text}</p>
-                        <button className="secondary-button" style={{ marginTop: "1rem" }}>
-                            Order Now
+                    ))
+                ) : (
+                    <div className="no-results-container">
+                        <h2>No dishes found!</h2>
+                        <p>We couldn't find any dishes matching "{searchTerm}". Try a different search term or category.</p>
+                        <button
+                            className="secondary-button"
+                            style={{ marginTop: "1.5rem" }}
+                            onClick={() => {
+                                setSearchTerm("");
+                                setActiveCategory("All");
+                            }}
+                        >
+                            Reset Filters
                         </button>
                     </div>
-                ))}
+                )}
             </div>
+
+            {/* Success Toast */}
+            {showToast && (
+                <div className="toast-notification">
+                    <div className="toast-icon">
+                        <FiCheckCircle />
+                    </div>
+                    <div className="toast-text">
+                        <h3>Added!</h3>
+                        <p>Item successfully added to your cart.</p>
+                    </div>
+                </div>
+            )}
         </div>
     );
 };
