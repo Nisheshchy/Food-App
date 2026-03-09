@@ -66,11 +66,6 @@ const Home = () => {
                   Order Now <FiArrowRight />
                 </button>
               </Link>
-              <Link to="/menu">
-                <button className="hero-cta-secondary">
-                  View Menu
-                </button>
-              </Link>
             </div>
 
             {/* Quick Feature Pills */}
