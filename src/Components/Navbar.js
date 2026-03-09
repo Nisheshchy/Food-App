@@ -76,7 +76,9 @@ const Navbar = () => {
             <BsCart2 className="navbar-cart-icon" />
           </Badge>
         </Link>
-        <button className="primary-button">Bookings Now</button>
+        <Link to="/login">
+          <button className="primary-button">Login / Sign in</button>
+        </Link>
       </div>
       <div className="navbar-menu-container">
         <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
