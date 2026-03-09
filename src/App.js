@@ -15,6 +15,8 @@ import ContactUs from "./Components/ContactUs";
 import TestimonialsPage from "./Components/TestimonialsPage";
 import AboutUs from "./Components/AboutUs";
 import Cart from "./Components/Cart";
+import Login from "./Components/Login";
+import SignUp from "./Components/SignUp";
 import { CartProvider } from "./Context/CartContext";
 
 function App() {
@@ -43,6 +45,8 @@ function App() {
               <Route path="/contact" element={<ContactUs />} />
               <Route path="/testimonials" element={<TestimonialsPage />} />
               <Route path="/cart" element={<Cart />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/signup" element={<SignUp />} />
             </Routes>
           </div>
           <Footer />
