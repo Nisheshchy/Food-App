@@ -1,8 +1,5 @@
-<<<<<<< HEAD
 # Food App
-=======
-# Food App 
->>>>>>> 50bd651 (updated the readme.md)
+
 
 A simple, modern, and fully responsive restaurant landing page and e-commerce platform built from scratch using React.js, Material UI (MUI), React Router, and React Icons.
 
