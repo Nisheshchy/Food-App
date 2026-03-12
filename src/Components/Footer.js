@@ -31,14 +31,22 @@ const Footer = () => {
           </div>
           <p className="footer-description">
             Experience the taste of quality and nutrition. We deliver fresh,
-            chef-prepared meals directly to your doorstep, ensuring health
-            meets convenience in every bite.
+            chef-prepared meals directly to your doorstep, ensuring health meets
+            convenience in every bite.
           </p>
           <div className="footer-social-links">
-            <a href="#" aria-label="Twitter"><BsTwitter /></a>
-            <a href="#" aria-label="Facebook"><FaFacebook /></a>
-            <a href="#" aria-label="LinkedIn"><SiLinkedin /></a>
-            <a href="#" aria-label="YouTube"><BsYoutube /></a>
+            <a href="#" aria-label="Twitter">
+              <BsTwitter />
+            </a>
+            <a href="#" aria-label="Facebook">
+              <FaFacebook />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <SiLinkedin />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <BsYoutube />
+            </a>
           </div>
         </div>
 
@@ -60,7 +68,7 @@ const Footer = () => {
             <div className="footer-nav-links">
               <a href="tel:+9779812345678">+977-9812345678</a>
               <a href="mailto:contact@caffet.com">contact@caffet.com</a>
-              <span>Kathmandu, Nepal</span>
+              <span>Durbar Marg, Kathmandu, Nepal</span>
               <span>Sun - Fri: 8am - 9pm</span>
             </div>
           </div>
@@ -76,7 +84,9 @@ const Footer = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 required
               />
-              <button type="submit" className="newsletter-btn">Join</button>
+              <button type="submit" className="newsletter-btn">
+                Join
+              </button>
             </form>
           </div>
         </div>
@@ -85,7 +95,10 @@ const Footer = () => {
       <div className="footer-bottom-bar">
         <div className="footer-divider"></div>
         <div className="footer-copyright-content">
-          <p>&copy; {new Date().getFullYear()} Caffet Food App. All Rights Reserved.</p>
+          <p>
+            &copy; {new Date().getFullYear()} Caffet Food App. All Rights
+            Reserved.
+          </p>
           <div className="footer-legal-links">
             <span>Terms & Conditions</span>
             <span>Privacy Policy</span>
