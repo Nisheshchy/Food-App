@@ -689,7 +689,7 @@ a:has(.secondary-button),
   gap: 1.25rem;
 }
 
-.footer-social-links a {
+.footer-social-links button {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -701,9 +701,11 @@ a:has(.secondary-button),
   font-size: 1.25rem;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   text-decoration: none;
+  border: none;
+  cursor: pointer;
 }
 
-.footer-social-links a:hover {
+.footer-social-links button:hover {
   background-color: #fe5d0d;
   color: #ffffff;
   transform: translateY(-5px) rotate(8deg);

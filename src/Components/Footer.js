@@ -35,18 +35,18 @@ const Footer = () => {
             convenience in every bite.
           </p>
           <div className="footer-social-links">
-            <a href="#" aria-label="Twitter">
+            <button type="button" aria-label="Twitter">
               <BsTwitter />
-            </a>
-            <a href="#" aria-label="Facebook">
+            </button>
+            <button type="button" aria-label="Facebook">
               <FaFacebook />
-            </a>
-            <a href="#" aria-label="LinkedIn">
+            </button>
+            <button type="button" aria-label="LinkedIn">
               <SiLinkedin />
-            </a>
-            <a href="#" aria-label="YouTube">
+            </button>
+            <button type="button" aria-label="YouTube">
               <BsYoutube />
-            </a>
+            </button>
           </div>
         </div>
 
