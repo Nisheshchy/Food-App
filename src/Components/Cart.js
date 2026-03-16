@@ -96,8 +96,8 @@ const Cart = () => {
                                 {promoApplied ? (
                                     <div className="promo-applied">
                                         <div className="promo-tag">
-                                            <span>🎉 {promoApplied.code} — {promoApplied.label}</span>
-                                            <button onClick={handleRemovePromo} className="promo-remove-btn">✕</button>
+                                            <span>{promoApplied.code} — {promoApplied.label}</span>
+                                            <button onClick={handleRemovePromo} className="promo-remove-btn">X</button>
                                         </div>
                                     </div>
                                 ) : (
