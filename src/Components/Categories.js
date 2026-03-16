@@ -43,7 +43,7 @@ const Categories = () => {
                             </div>
                             <h2>{category.title}</h2>
                             <p style={{ color: "#fe5d0d", fontWeight: "700" }}>{category.count}</p>
-                            <span style={{ fontSize: "0.8rem", color: "#6a6a6a", marginTop: "0.5rem" }}>Show Dishes →</span>
+                            <span style={{ fontSize: "0.8rem", color: "#6a6a6a", marginTop: "0.5rem" }}>Show Dishes</span>
                         </div>
                     </Link>
                 ))}
