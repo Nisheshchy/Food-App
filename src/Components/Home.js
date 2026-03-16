@@ -1,9 +1,9 @@
 /** @format */
 
 import React, { useState, useEffect } from "react";
-import BannerImage from "../Assets/home-banner-image.png";
 import { FiArrowRight, FiClock, FiTag, FiStar, FiTruck, FiAward } from "react-icons/fi";
 import { Link } from "react-router-dom";
+import BannerImage from "../Assets/home-banner-image.png";
 
 const Home = () => {
   const [timeLeft, setTimeLeft] = useState({
@@ -28,8 +28,8 @@ const Home = () => {
     };
 
     updateTimer();
-    const interval = setInterval(updateTimer, 1000);
-    return () => clearInterval(interval);
+    const timerInterval = setInterval(updateTimer, 1000);
+    return () => clearInterval(timerInterval);
   }, []);
 
   const offers = [
@@ -40,7 +40,7 @@ const Home = () => {
 
   const features = [
     { icon: <FiTruck />, title: "30 Min Delivery", desc: "Lightning fast to your door" },
-    { icon: <FiStar />, title: "4.9★ Rated", desc: "Loved by 10,000+ customers" },
+    { icon: <FiStar />, title: "4.9 Rated", desc: "Loved by 10,000+ customers" },
     { icon: <FiAward />, title: "Best Quality", desc: "Fresh ingredients guaranteed" },
   ];
 
@@ -50,7 +50,7 @@ const Home = () => {
       <div className="modern-hero">
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-badge">🍽️ #1 Food Delivery App</div>
+            <div className="hero-badge">#1 Food Delivery App</div>
             <h1 className="hero-title">
               Delicious Food,
               <span className="hero-highlight"> Delivered Fast.</span>
@@ -87,14 +87,14 @@ const Home = () => {
             <img src={BannerImage} alt="Delicious food" className="hero-main-image" />
             {/* Floating Cards */}
             <div className="floating-card floating-card-1">
-              <span className="floating-emoji">⭐</span>
+              <span className="floating-emoji"></span>
               <div>
                 <strong>4.9 Rating</strong>
                 <p>2k+ Reviews</p>
               </div>
             </div>
             <div className="floating-card floating-card-2">
-              <span className="floating-emoji">🚀</span>
+              <span className="floating-emoji"></span>
               <div>
                 <strong>30 Min</strong>
                 <p>Fast Delivery</p>
@@ -107,7 +107,7 @@ const Home = () => {
       {/* Offers & Discount Section */}
       <div className="offers-section">
         <div className="offers-header">
-          <p className="primary-subheading">🔥 Limited Time</p>
+          <p className="primary-subheading">Limited Time</p>
           <h2 className="primary-heading">Today's Best Offers</h2>
           <p className="primary-text">
             Grab these exclusive deals before they expire!
