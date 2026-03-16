@@ -73,7 +73,7 @@ const ContactUs = () => {
 
                 {isSubmitted && (
                     <div className="toast-notification">
-                        <div className="toast-icon">✓</div>
+                        <div className="toast-icon"></div>
                         <div className="toast-text">
                             <h3>Message Sent!</h3>
                             <p>We'll get back to you soon.</p>
