@@ -40,6 +40,7 @@ function App() {
                   </>
                 }
               />
+
               <Route path="/menu" element={<FoodMenu />} />
               <Route path="/about" element={<AboutUs />} />
               <Route path="/contact" element={<ContactUs />} />
