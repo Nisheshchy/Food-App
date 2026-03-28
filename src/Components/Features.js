@@ -5,17 +5,17 @@ import React from "react";
 const Features = () => {
     const featuresData = [
         {
-            image: "https://images.unsplash.com/photo-1542838132-92c53300491e?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1610832958506-aa56368176cf?w=500&auto=format&fit=crop&q=60",
             title: "Quality Ingredients",
             text: "We source only the freshest organic produce from local farmers every morning.",
         },
         {
-            image: "https://images.unsplash.com/photo-1526367790999-0150786486a9?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1568702846914-96b305d2aaeb?w=500&auto=format&fit=crop&q=60",
             title: "Fast Delivery",
             text: "Your meal is prepared and delivered within 30 minutes, guaranteed hot and fresh.",
         },
         {
-            image: "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=500&auto=format&fit=crop&q=60",
             title: "Best Prices",
             text: "Enjoy gourmet meals at affordable prices with our exclusive deals and rewards.",
         },
