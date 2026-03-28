@@ -11,9 +11,9 @@ const Home = () => {
   });
 
   useEffect(() => {
+    // Countdown resets daily — ends at midnight tonight
     const deadline = new Date();
-    deadline.setDate(deadline.getDate() + 3);
-    deadline.setHours(23, 59, 59, 0);
+    deadline.setHours(23, 59, 59, 999);
 
     const updateTimer = () => {
       const now = new Date();
@@ -32,10 +32,27 @@ const Home = () => {
     return () => clearInterval(timerInterval);
   }, []);
 
-  const offers = [
+  // Pool of 9 offers — 3 are picked each day based on the date
+  const allOffers = [
     { title: "Weekend Special", discount: "20% OFF", code: "FOOD20", description: "On all orders above $30", color: "#fe5d0d" },
-    { title: "Free Delivery", discount: "FREE", code: "FREE", description: "No shipping charges on any order", color: "#2ecc71" },
+    { title: "Free Delivery", discount: "FREE", code: "FREESHIP", description: "No shipping charges on any order", color: "#2ecc71" },
     { title: "Flat Discount", discount: "$10 OFF", code: "SAVE10", description: "On your first order", color: "#9b59b6" },
+    { title: "Lunch Deal", discount: "15% OFF", code: "LUNCH15", description: "Orders placed between 11am–2pm", color: "#e67e22" },
+    { title: "Family Bundle", discount: "25% OFF", code: "FAMILY25", description: "On orders above $60", color: "#e74c3c" },
+    { title: "Happy Hour", discount: "$5 OFF", code: "HAPPY5", description: "Every day 4pm–7pm", color: "#1abc9c" },
+    { title: "New User Offer", discount: "30% OFF", code: "NEWBIE30", description: "For first-time customers only", color: "#3498db" },
+    { title: "Combo Saver", discount: "$8 OFF", code: "COMBO8", description: "On any combo meal above $25", color: "#8e44ad" },
+    { title: "Midnight Munchies", discount: "18% OFF", code: "NIGHT18", description: "Orders placed after 9pm", color: "#2c3e50" },
+  ];
+
+  // Use today's date number as a seed to rotate 3 offers daily
+  const today = new Date();
+  const seed = today.getFullYear() * 10000 + (today.getMonth() + 1) * 100 + today.getDate();
+  const startIndex = seed % allOffers.length;
+  const offers = [
+    allOffers[startIndex % allOffers.length],
+    allOffers[(startIndex + 3) % allOffers.length],
+    allOffers[(startIndex + 6) % allOffers.length],
   ];
 
   const features = [
