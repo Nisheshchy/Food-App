@@ -34,7 +34,7 @@ const Home = () => {
 
   // Pool of 9 offers — 3 are picked each day based on the date
   const allOffers = [
-    { title: "Weekend Special", discount: "20% OFF", code: "FOOD20", description: "On all orders above $30", color: "#fe5d0d" },
+    { title: "Weekend Special", discount: "20% OFF", code: "FOOD20", description: "On all orders above $30", color: "#fc5c65" },
     { title: "Free Delivery", discount: "FREE", code: "FREESHIP", description: "No shipping charges on any order", color: "#2ecc71" },
     { title: "Flat Discount", discount: "$10 OFF", code: "SAVE10", description: "On your first order", color: "#9b59b6" },
     { title: "Lunch Deal", discount: "15% OFF", code: "LUNCH15", description: "Orders placed between 11am–2pm", color: "#e67e22" },

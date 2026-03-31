@@ -47,7 +47,7 @@ const AboutUs = () => {
                         Established with a Passion for Pure Taste.
                     </h1>
                     <p className="primary-text">
-                        Founded in 2024, our journey began with a simple idea: to bring
+                        Founded in 2025, our journey began with a simple idea: to bring
                         restaurant-quality, healthy meals directly to people's doorsteps. We
                         noticed a gap between fast food and home cooking, and we set out to
                         bridge it with love and fresh ingredients.
