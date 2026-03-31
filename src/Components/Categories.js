@@ -42,8 +42,8 @@ const Categories = () => {
                                 <img src={category.image} alt={category.title} />
                             </div>
                             <h2>{category.title}</h2>
-                            <p style={{ color: "#fe5d0d", fontWeight: "700" }}>{category.count}</p>
-                            <span style={{ fontSize: "0.8rem", color: "#6a6a6a", marginTop: "0.5rem" }}>Show Dishes</span>
+                            <p style={{ color: "#fc5c65", fontWeight: "700" }}>{category.count}</p>
+                            <span style={{ fontSize: "0.8rem", color: "#636e72", marginTop: "0.5rem" }}>Show Dishes</span>
                         </div>
                     </Link>
                 ))}
