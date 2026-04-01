@@ -220,11 +220,11 @@ const FoodMenu = () => {
                 </div>
             </div>
 
-            <div className="work-section-bottom">
+            <div className="work-section-bottom menu-grid">
                 {filteredItems.length > 0 ? (
                     filteredItems.map((item, index) => (
-                        <div className="work-section-info" key={index}>
-                            <div className="info-boxes-img-container" style={{ position: "relative" }}>
+                        <div className="work-section-info menu-card" key={index}>
+                            <div className="info-boxes-img-container menu-img-container" style={{ position: "relative" }}>
                                 <img src={item.image} alt={item.title} />
                                 <span className="category-badge">{item.category}</span>
                             </div>
