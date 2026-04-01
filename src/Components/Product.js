@@ -39,12 +39,17 @@ const Product = () => {
             </div>
             <div className="work-section-bottom">
                 {productInfoData.map((data) => (
-                    <div className="work-section-info" key={data.title}>
-                        <div className="info-boxes-img-container">
+                    <div className="work-section-info menu-card" key={data.title}>
+                        <div className="info-boxes-img-container menu-img-container">
                             <img src={data.image} alt={data.title} />
                         </div>
                         <h2>{data.title}</h2>
                         <p>{data.text}</p>
+                        <Link to="/menu" style={{ textDecoration: "none" }}>
+                            <button className="secondary-button" style={{ margin: "1rem 2rem 2.5rem 2rem" }}>
+                                View in Menu
+                            </button>
+                        </Link>
                     </div>
                 ))}
             </div>

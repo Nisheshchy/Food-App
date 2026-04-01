@@ -18,12 +18,14 @@ import Cart from "./Components/Cart";
 import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import { CartProvider } from "./Context/CartContext";
+import Announcement from "./Components/Announcement";
 
 function App() {
   return (
     <CartProvider>
       <Router>
         <div className="App">
+          <Announcement />
           <div className="content-wrapper">
             <Navbar />
             <Routes>
