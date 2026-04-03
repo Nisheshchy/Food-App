@@ -149,17 +149,21 @@ const Testimonial = ({ hideHeader }) => {
       )}
       <div className="testimonial-section-container" ref={scrollRef}>
         {displayTestimonials.map((item, index) => (
-          <div className="testimonial-section-bottom" key={index}>
+          <div className="testimonial-section-bottom modern-testimonial-card" key={index}>
+            <div className="testimonial-quote-icon">"</div>
             <div className="testimonial-image-container">
               <img src={item.image} alt={item.name} />
             </div>
-            <p>{item.text}</p>
             <div className="testimonials-stars-container">
               {[...Array(item.rating)].map((_, i) => (
                 <AiFillStar key={i} />
               ))}
             </div>
-            <h4>{item.name}</h4>
+            <p className="testimonial-quote-text">"{item.text}"</p>
+            <div className="testimonial-author-info">
+              <h4>{item.name}</h4>
+              <span>Verified Customer</span>
+            </div>
           </div>
         ))}
       </div>
