@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 import Testimonial from "./Testimonial";
-import { AiOutlineClose } from "react-icons/ai";
+import { AiOutlineClose, AiFillStar } from "react-icons/ai";
 import { FiCheckCircle } from "react-icons/fi";
 
 const TestimonialsPage = () => {
+    const [rating, setRating] = useState(5);
     const [showModal, setShowModal] = useState(false);
     const [showToast, setShowToast] = useState(false);
 
@@ -17,52 +18,96 @@ const TestimonialsPage = () => {
     };
 
     return (
-        <div className="testimonials-page-wrapper" style={{ marginTop: "5rem" }}>
+        <div className="testimonials-page-wrapper premium-page">
             <div className="work-section-top">
-                <p className="primary-subheading">Reviews</p>
-                <h1 className="primary-heading">Customer Stories</h1>
-                <p className="primary-text">
-                    We take pride in our service and the quality of our food. Read what
-                    our regular customers have to say about their experiences with us.
+                <div className="hero-badge">TRUSTED BY 10,000+ CUSTOMERS</div>
+                <h1 className="primary-heading">Real Stories, <span className="hero-highlight">Pure Love.</span></h1>
+                <p className="primary-text" style={{ maxWidth: "700px" }}>
+                    We believe data tells part of the story, but voices tell the rest. Read how we've 
+                    transformed daily dining for food enthusiasts across the nation.
                 </p>
             </div>
-            <Testimonial hideHeader={true} />
 
-            <div className="share-experience-section" style={{
-                display: "flex",
-                flexDirection: "column",
-                alignItems: "center",
-                textAlign: "center",
-                margin: "10rem auto",
-                padding: "0 2rem"
-            }}>
-                <h2 className="primary-heading">Share Your Experience</h2>
-                <p className="primary-text" style={{ maxWidth: "600px" }}>
-                    Had a great meal? We'd love to hear from you too!
-                </p>
-                <button
-                    className="secondary-button"
-                    style={{ marginTop: "2rem" }}
-                    onClick={() => setShowModal(true)}
-                >
-                    Write a Review
-                </button>
+            {/* Main Marquee Section */}
+            <div className="testimonial-marquee-wrapper">
+                <Testimonial hideHeader={true} />
+            </div>
+
+            {/* Social Proof Stats */}
+            <div className="social-proof-banner">
+                <div className="proof-item">
+                    <h2>4.9/5</h2>
+                    <p>Average Rating</p>
+                </div>
+                <div className="proof-separator"></div>
+                <div className="proof-item">
+                    <h2>98%</h2>
+                    <p>On-time Delivery</p>
+                </div>
+                <div className="proof-separator"></div>
+                <div className="proof-item">
+                    <h2>500k+</h2>
+                    <p>Happy Moments</p>
+                </div>
+            </div>
+
+            {/* Call to action section with enhanced design */}
+            <div className="share-experience-section-premium">
+                <div className="cta-glass-card">
+                    <h2 className="primary-heading">Your Voice Matters</h2>
+                    <p className="primary-text">
+                        Had a memorable meal? Your feedback fuels our passion for perfection.
+                        Join our community of food critics.
+                    </p>
+                    <button
+                        className="hero-cta-primary"
+                        onClick={() => setShowModal(true)}
+                    >
+                        Review Our Service
+                    </button>
+                    
+                    {/* Visual decoration for the section */}
+                    <div className="cta-decoration dec-1"></div>
+                    <div className="cta-decoration dec-2"></div>
+                </div>
             </div>
 
             {/* Review Modal */}
             {showModal && (
                 <div className="review-modal-overlay">
-                    <div className="review-modal-content">
+                    <div className="review-modal-content premium-modal">
                         <AiOutlineClose
                             className="close-modal"
                             onClick={() => setShowModal(false)}
                         />
-                        <h2>Submit Review</h2>
-                        <form className="review-form" onSubmit={handleSubmit}>
-                            <input type="text" placeholder="Your Name" required />
-                            <textarea placeholder="Tell us about your experience..." rows="4" required></textarea>
-                            <button type="submit" className="secondary-button" style={{ width: "100%" }}>
-                                Send Review
+                        <div className="modal-header">
+                            <h2>Share Your Experience</h2>
+                            <p>Let us know what you loved (or how we can improve).</p>
+                        </div>
+                        <form className="review-form premium-form" onSubmit={handleSubmit}>
+                            <div className="input-group">
+                                <label>Full Name</label>
+                                <input type="text" placeholder="e.g. Nishesh Chaudhary" required />
+                            </div>
+                            <div className="input-group">
+                                <label>Your Feedback</label>
+                                <textarea placeholder="The food was amazing because..." rows="4" required></textarea>
+                            </div>
+                            <div className="rating-selector-placeholder">
+                                <span>Rate your experience: </span>
+                                <div className="stars-input">
+                                    {[1, 2, 3, 4, 5].map((star) => (
+                                        <AiFillStar
+                                            key={star}
+                                            className={star <= rating ? "star-active" : "star-inactive"}
+                                            onClick={() => setRating(star)}
+                                            style={{ cursor: 'pointer', transition: 'all 0.2s ease' }}
+                                        />
+                                    ))}
+                                </div>
+                            </div>
+                            <button type="submit" className="auth-primary-button" style={{ width: "100%" }}>
+                                Publish Review
                             </button>
                         </form>
                     </div>
@@ -71,13 +116,13 @@ const TestimonialsPage = () => {
 
             {/* Success Toast */}
             {showToast && (
-                <div className="toast-notification">
+                <div className="toast-notification premium-toast">
                     <div className="toast-icon">
                         <FiCheckCircle />
                     </div>
                     <div className="toast-text">
-                        <h3>Success!</h3>
-                        <p>Thank you for your valuable feedback.</p>
+                        <h3>Review Published!</h3>
+                        <p>Thank you for being part of our journey.</p>
                     </div>
                 </div>
             )}
