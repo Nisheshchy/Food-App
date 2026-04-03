@@ -1,8 +1,6 @@
 /** @format */
 
 import React, { useState } from "react";
-import ShrimpTempura from "../Assets/shrimp-tempura-recipe-8.jpg";
-import ChickenTikka from "../Assets/Chicken-Tikka-Masala_0-SQ.webp";
 import { useCart } from "../Context/CartContext";
 import { FiCheckCircle, FiSearch } from "react-icons/fi";
 
