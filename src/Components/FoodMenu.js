@@ -28,7 +28,7 @@ const FoodMenu = () => {
 
     const menuItems = [
         {
-            image: "https://images.unsplash.com/photo-1543339308-43e59d6b73a6?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1612874742237-6526221588e3?w=500&auto=format&fit=crop&q=60",
             title: "Spaghetti Carbonara",
             category: "Italian",
             price: "$14.99",
@@ -49,7 +49,7 @@ const FoodMenu = () => {
             text: "Freshly grilled salmon fillet with lemon slices and honey glaze.",
         },
         {
-            image: ChickenTikka,
+            image: "https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=500&auto=format&fit=crop&q=60",
             title: "Chicken Tikka Masala",
             category: "Indian",
             price: "$15.99",
@@ -84,7 +84,7 @@ const FoodMenu = () => {
             text: "Smashed avocado on sourdough toast with poached eggs.",
         },
         {
-            image: "https://images.unsplash.com/photo-1512838243191-e81e8f66f1fd?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=500&auto=format&fit=crop&q=60",
             title: "Street Style Tacos",
             category: "Mexican",
             price: "$10.99",
@@ -121,7 +121,7 @@ const FoodMenu = () => {
             text: "Rich pork bone broth served with noodles, chashu pork, and a soft-boiled egg.",
         },
         {
-            image: ShrimpTempura,
+            image: "https://images.unsplash.com/photo-1581184953963-d15972933db1?w=500&auto=format&fit=crop&q=60",
             title: "Crispy Tempura Platter",
             category: "Japanese",
             price: "$15.99",
@@ -136,7 +136,7 @@ const FoodMenu = () => {
             text: "Trofie pasta tossed in a vibrant basil, pine nut, and parmesan pesto.",
         },
         {
-            image: "https://images.unsplash.com/photo-1533777857889-4be7c70b33f7?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&auto=format&fit=crop&q=60",
             title: "Homemade Lasagna",
             category: "Italian",
             price: "$16.49",
@@ -151,7 +151,7 @@ const FoodMenu = () => {
             text: "Nutrient-rich quinoa with roasted chickpeas, avocado, and tahini dressing.",
         },
         {
-            image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1490645935967-10de6ba17061?w=500&auto=format&fit=crop&q=60",
             title: "Grilled Tofu Salad",
             category: "Healthy",
             price: "$11.99",
@@ -165,7 +165,7 @@ const FoodMenu = () => {
             text: "Whole-wheat wrap with hummus, feta, olives, and fresh vegetables.",
         },
         {
-            image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=500&auto=format&fit=crop&q=60",
+            image: "https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=500&auto=format&fit=crop&q=60",
             title: "Steamed Sea Bass",
             category: "Healthy",
             price: "$19.99",
