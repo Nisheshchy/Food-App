@@ -1,8 +1,6 @@
 /** @format */
 
 import React, { useState } from "react";
-import ShrimpTempura from "../Assets/shrimp-tempura-recipe-8.jpg";
-import ChickenTikka from "../Assets/Chicken-Tikka-Masala_0-SQ.webp";
 import { useCart } from "../Context/CartContext";
 import { FiCheckCircle, FiSearch } from "react-icons/fi";
 
@@ -170,6 +168,147 @@ const FoodMenu = () => {
             category: "Healthy",
             price: "$19.99",
             text: "Zesty steamed sea bass served with ginger, spring onions, and bok choy.",
+        },
+        // --- NEW ITEMS ---
+        {
+            image: "https://images.unsplash.com/photo-1476124369491-e7addf5db371?w=500&auto=format&fit=crop&q=60",
+            title: "Mushroom Risotto",
+            category: "Italian",
+            price: "$15.99",
+            text: "Creamy Arborio rice slow-cooked with wild mushrooms and truffle oil.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1551183053-bf91a1d81141?w=500&auto=format&fit=crop&q=60",
+            title: "Gnocchi alla Sorrentina",
+            category: "Italian",
+            price: "$14.49",
+            text: "Soft potato gnocchi baked with tomato sauce, mozzarella, and fresh basil.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1521305916504-4a1121188589?w=500&auto=format&fit=crop&q=60",
+            title: "Classic California Roll",
+            category: "Japanese",
+            price: "$12.99",
+            text: "Fresh crab, avocado, and cucumber wrapped in seaweed and seasoned rice.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=500&auto=format&fit=crop&q=60",
+            title: "Beef Teriyaki Bowl",
+            category: "Japanese",
+            price: "$17.99",
+            text: "Sliced tender beef glazed in house-made teriyaki sauce over steamed rice.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1603894584216-2fd1c53bbc32?w=500&auto=format&fit=crop&q=60",
+            title: "Butter Chicken",
+            category: "Indian",
+            price: "$16.99",
+            text: "Tender chicken pieces in a mild, buttery tomato gravy with dried fenugreek.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1546833999-b9f581a1996d?w=500&auto=format&fit=crop&q=60",
+            title: "Dal Makhani",
+            category: "Indian",
+            price: "$11.99",
+            text: "Slow-cooked black lentils with cream and butter, a signature North Indian dish.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1645112481338-3560e99b32fa?w=500&auto=format&fit=crop&q=60",
+            title: "Zucchini Pesto Noodles",
+            category: "Healthy",
+            price: "$13.49",
+            text: "Light and refreshing spiralized zucchini tossed in a vibrant basil pesto.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1546793665-c746839e6381?w=500&auto=format&fit=crop&q=60",
+            title: "Roasted Chicken Salad",
+            category: "Healthy",
+            price: "$14.99",
+            text: "Sliced roasted chicken breast over mixed greens with a lemon-herb vinaigrette.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1525059696034-4967a8e1dca2?w=500&auto=format&fit=crop&q=60",
+            title: "Crispy Chicken Burger",
+            category: "Fast Food",
+            price: "$12.99",
+            text: "Golden-fried chicken breast with spicy mayo, lettuce, and pickles.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1513456838258-518f35a73afc?w=500&auto=format&fit=crop&q=60",
+            title: "Nachos Supreme",
+            category: "Mexican",
+            price: "$11.49",
+            text: "Crispy tortilla chips topped with melted cheese, jalapenos, and sour cream.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1599974590225-54619d9b673a?w=500&auto=format&fit=crop&q=60",
+            title: "Chicken Quesadilla",
+            category: "Mexican",
+            price: "$13.99",
+            text: "Large wheat tortilla stuffed with grilled chicken, cheese, and peppers.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1571877227200-a0d98ea607e9?w=500&auto=format&fit=crop&q=60",
+            title: "Classic Tiramisu",
+            category: "Dessert",
+            price: "$7.99",
+            text: "Authentic Italian dessert with coffee-soaked ladyfingers and mascarpone cream.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1533134242443-d4fd215305ad?w=500&auto=format&fit=crop&q=60",
+            title: "New York Cheesecake",
+            category: "Dessert",
+            price: "$8.49",
+            text: "Rich and creamy baked cheesecake with a classic graham cracker crust.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1563379091339-03b21ef4a4f8?w=500&auto=format&fit=crop&q=60",
+            title: "Vegetable Biryani",
+            category: "Indian",
+            price: "$13.99",
+            text: "Aromatic basmati rice cooked with seasonal vegetables and exotic spices.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1621510456681-229ef554468b?w=500&auto=format&fit=crop&q=60",
+            title: "Shrimp Scampi Pasta",
+            category: "Italian",
+            price: "$18.99",
+            text: "Sautéed shrimp in a garlic, lemon, and white wine butter sauce over linguine.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1546069901-e516a661fa83?w=500&auto=format&fit=crop&q=60",
+            title: "Tuna Poke Bowl",
+            category: "Japanese",
+            price: "$16.49",
+            text: "Marinated raw tuna with seaweed salad, edamame, and pickled ginger over rice.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1626074353765-517a681e40be?w=500&auto=format&fit=crop&q=60",
+            title: "BBQ Chicken Wings",
+            category: "Fast Food",
+            price: "$14.99",
+            text: "10 pieces of crispy wings tossed in our signature smoky BBQ sauce.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=500&auto=format&fit=crop&q=60",
+            title: "Acai Power Bowl",
+            category: "Healthy",
+            price: "$10.99",
+            text: "Frozen acai berry blend topped with granola, banana, and chia seeds.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1552332386-f8dd00dc2f85?w=500&auto=format&fit=crop&q=60",
+            title: "Beef Enchiladas",
+            category: "Mexican",
+            price: "$15.49",
+            text: "Three corn tortillas rolled with seasoned beef and baked under red chili sauce.",
+        },
+        {
+            image: "https://images.unsplash.com/photo-1506459225024-1428097a7e18?w=500&auto=format&fit=crop&q=60",
+            title: "Matcha Green Tea Cake",
+            category: "Dessert",
+            price: "$7.49",
+            text: "Light sponge cake infused with premium Japanese matcha green tea powder.",
         },
     ];
 
