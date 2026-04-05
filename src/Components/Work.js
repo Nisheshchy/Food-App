@@ -4,6 +4,7 @@ import React from "react";
 import PickMeals from "../Assets/pick-meals-image.png";
 import ChooseMeals from "../Assets/choose-image.png";
 import DeliveryMeals from "../Assets/delivery-image.png";
+import { Link } from "react-router-dom";
 
 const Work = () => {
   const workInfoData = [
@@ -35,8 +36,9 @@ const Work = () => {
         </p>
       </div>
       <div className="work-section-bottom">
-        {workInfoData.map((data) => (
+        {workInfoData.map((data, index) => (
           <div className="work-section-info" key={data.title}>
+            <div className="step-number">{index + 1}</div>
             <div className="info-boxes-img-container">
               <img src={data.image} alt={data.title} className="work-icon" />
             </div>
@@ -44,6 +46,11 @@ const Work = () => {
             <p>{data.text}</p>
           </div>
         ))}
+      </div>
+      <div className="work-cta-container">
+          <Link to="/menu">
+            <button className="primary-button">Start Your Order Now</button>
+          </Link>
       </div>
     </div>
   );
