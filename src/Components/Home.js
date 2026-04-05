@@ -19,7 +19,12 @@ const Home = () => {
       <div className="modern-hero">
         <div className="hero-content">
           <div className="hero-text">
-            <div className="hero-badge">#1 Food Delivery App</div>
+            <div className="hero-badges">
+              <div className="hero-badge">#1 Food Delivery App</div>
+              <div className="live-status-badge">
+                <span className="live-dot"></span> Kitchen is Open
+              </div>
+            </div>
             <h1 className="hero-title">
               Delicious Food,
               <span className="hero-highlight"> Delivered Fast.</span>
@@ -33,6 +38,11 @@ const Home = () => {
               <Link to="/menu">
                 <button className="hero-cta-primary">
                   Order Now <FiArrowRight />
+                </button>
+              </Link>
+              <Link to="/about">
+                <button className="hero-cta-secondary">
+                  Our Story
                 </button>
               </Link>
             </div>
@@ -69,6 +79,29 @@ const Home = () => {
                 <p>Fast Delivery</p>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Trusted By / Stats Section */}
+      <div className="trusted-by-section">
+        <div className="trusted-by-title">Trusted by thousands of foodies</div>
+        <div className="trusted-stats">
+          <div className="stat-item">
+            <span className="stat-value">50k+</span>
+            <span className="stat-label">Active Users</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">200+</span>
+            <span className="stat-label">Top Restaurants</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">4.9/5</span>
+            <span className="stat-label">Google Rating</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-value">15m</span>
+            <span className="stat-label">Avg Delivery</span>
           </div>
         </div>
       </div>
