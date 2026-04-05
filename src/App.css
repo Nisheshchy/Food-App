@@ -186,6 +186,68 @@ a:has(.secondary-button),
   cursor: pointer;
 }
 
+/* ======== MENU CARD ENHANCEMENTS ======== */
+.menu-card {
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0 !important;
+  display: flex;
+  flex-direction: column;
+}
+
+.menu-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.menu-img-container {
+  width: 100% !important;
+  height: 250px !important;
+  overflow: hidden !important;
+  border-radius: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.menu-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.menu-card:hover .menu-img-container img {
+  transform: scale(1.1);
+}
+
+.menu-card-content {
+  padding: 2rem;
+  text-align: center;
+}
+
+.stars-row {
+  display: flex;
+  justify-content: center;
+  gap: 0.2rem;
+  color: #f1c40f;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+}
+
+.trending-badge {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: linear-gradient(135deg, #fc5c65, #fd9644);
+  color: white;
+  padding: 0.4rem 1rem;
+  border-radius: 2rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  z-index: 2;
+  box-shadow: 0 4px 10px rgba(252, 92, 101, 0.3);
+}
+
 /* ======== MODERN HERO SECTION ======== */
 .modern-hero {
   min-height: 90vh;
@@ -242,8 +304,51 @@ a:has(.secondary-button),
   border-radius: 5rem;
   font-weight: 700;
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
   border: 1px solid rgba(254, 93, 13, 0.15);
+}
+
+.hero-badges {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.5rem;
+}
+
+.live-status-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: white;
+  padding: 0.4rem 1.2rem;
+  border-radius: 5rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #20bf6b;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(32, 191, 107, 0.1);
+}
+
+.live-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #20bf6b;
+  border-radius: 50%;
+  position: relative;
+}
+
+.live-dot::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  border-radius: 50%;
+  animation: pulseLive 1.5s ease-out infinite;
+}
+
+@keyframes pulseLive {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(3); opacity: 0; }
 }
 
 .hero-title {
@@ -455,6 +560,81 @@ a:has(.secondary-button),
 
   50% {
     transform: translateY(-10px);
+  }
+}
+
+/* Trusted By Section */
+.trusted-by-section {
+  padding: 4rem 0;
+  border-top: 1px solid rgba(0, 0, 0, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 4rem 0 8rem 0;
+  text-align: center;
+}
+
+.trusted-by-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #b2bec3;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin-bottom: 3rem;
+}
+
+.trusted-stats {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-value {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #2d3436;
+  margin-bottom: 0.5rem;
+  background: linear-gradient(135deg, #2d3436, #fc5c65);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.stat-label {
+  font-size: 0.9rem;
+  color: #636e72;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .hero-title {
+    font-size: 3rem;
+  }
+  .hero-content {
+    flex-direction: column-reverse;
+    text-align: center;
+    gap: 3rem;
+  }
+  .hero-actions {
+    justify-content: center;
+  }
+  .hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .hero-features {
+    justify-content: center;
+  }
+  .trusted-stats {
+    gap: 3rem;
+  }
+  .stat-value {
+    font-size: 2rem;
   }
 }
 
@@ -1856,6 +2036,36 @@ a:has(.secondary-button),
   color: #636e72;
   font-weight: 500;
   padding: 0 2rem 3rem 2rem;
+}
+
+.step-number {
+  position: absolute;
+  top: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  background: linear-gradient(135deg, #fc5c65, #fd9644);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 1.2rem;
+  box-shadow: 0 4px 15px rgba(252, 92, 101, 0.4);
+  border: 4px solid white;
+  z-index: 2;
+}
+
+.work-section-info {
+  position: relative !important;
+}
+
+.work-cta-container {
+  margin-top: 5rem;
+  display: flex;
+  justify-content: center;
 }
 
 /* --- Dedicated Menu Grid & Cards --- */
