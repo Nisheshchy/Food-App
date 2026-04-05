@@ -2,6 +2,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
+import { FiStar } from "react-icons/fi";
 
 const Product = () => {
     const productInfoData = [
@@ -38,18 +39,24 @@ const Product = () => {
                 </Link>
             </div>
             <div className="work-section-bottom">
-                {productInfoData.map((data) => (
+                {productInfoData.map((data, index) => (
                     <div className="work-section-info menu-card" key={data.title}>
+                        {index === 0 && <div className="trending-badge">Trending</div>}
                         <div className="info-boxes-img-container menu-img-container">
                             <img src={data.image} alt={data.title} />
                         </div>
-                        <h2>{data.title}</h2>
-                        <p>{data.text}</p>
-                        <Link to="/menu" style={{ textDecoration: "none" }}>
-                            <button className="secondary-button" style={{ margin: "1rem 2rem 2.5rem 2rem" }}>
-                                View in Menu
-                            </button>
-                        </Link>
+                        <div className="menu-card-content">
+                            <div className="stars-row">
+                                <FiStar /> <FiStar /> <FiStar /> <FiStar /> <FiStar />
+                            </div>
+                            <h2>{data.title}</h2>
+                            <p>{data.text}</p>
+                            <Link to="/menu" style={{ textDecoration: "none" }}>
+                                <button className="secondary-button" style={{ margin: "1rem auto 0 auto" }}>
+                                    Order Now
+                                </button>
+                            </Link>
+                        </div>
                     </div>
                 ))}
             </div>
