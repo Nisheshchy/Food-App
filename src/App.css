@@ -3401,3 +3401,244 @@ a:has(.secondary-button),
     font-size: 2rem;
   }
 }
+/* ======== WHY CHOOSE US SECTION ======== */
+.benefits-section {
+  padding: 8rem 0;
+  text-align: center;
+}
+
+.benefits-header {
+  margin-bottom: 4rem;
+}
+
+.benefits-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 3rem;
+}
+
+.benefit-card {
+  background: white;
+  padding: 3rem 2rem;
+  border-radius: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.03);
+}
+
+.benefit-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  border-color: #fc5c65;
+}
+
+.benefit-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1.5rem;
+  display: inline-block;
+}
+
+.benefit-card h3 {
+  font-size: 1.5rem;
+  color: #2d3436;
+  margin-bottom: 1rem;
+}
+
+.benefit-card p {
+  color: #636e72;
+  line-height: 1.6;
+}
+
+/* ======== APP PROMO SECTION ======== */
+.app-promo-section {
+  background: linear-gradient(135deg, #2d3436, #000);
+  border-radius: 3rem;
+  padding: 6rem;
+  margin: 8rem 0;
+  color: white;
+  overflow: hidden;
+  position: relative;
+}
+
+.app-promo-section .primary-heading {
+  color: white;
+}
+
+.app-promo-section .primary-text {
+  color: #b2bec3;
+}
+
+.app-promo-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+}
+
+.app-promo-text {
+  flex: 1;
+}
+
+.app-store-buttons {
+  display: flex;
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+
+.app-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  background: white;
+  color: #2d3436;
+  padding: 0.8rem 1.5rem;
+  border-radius: 1rem;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.app-btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
+}
+
+.app-btn-icon {
+  font-size: 2rem;
+}
+
+.app-btn-text {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1.2;
+}
+
+.app-btn-text span {
+  font-size: 0.7rem;
+  text-transform: uppercase;
+}
+
+.app-btn-text strong {
+  font-size: 1.1rem;
+}
+
+.app-promo-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.phone-mockup {
+  width: 300px;
+  height: 600px;
+  background: #111;
+  border: 12px solid #333;
+  border-radius: 3rem;
+  position: relative;
+  box-shadow: 0 50px 100px rgba(0, 0, 0, 0.5);
+}
+
+.phone-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 2rem;
+  overflow: hidden;
+  background: #fff;
+}
+
+.phone-screen img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ======== NEWSLETTER SECTION ======== */
+.newsletter-section {
+  padding: 8rem 0;
+  display: flex;
+  justify-content: center;
+}
+
+.newsletter-card {
+  background: linear-gradient(135deg, #fc5c65, #fd9644);
+  width: 100%;
+  max-width: 1000px;
+  padding: 5rem;
+  border-radius: 3rem;
+  text-align: center;
+  color: white;
+  box-shadow: 0 20px 50px rgba(252, 92, 101, 0.3);
+}
+
+.newsletter-card h2 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.newsletter-card p {
+  font-size: 1.2rem;
+  margin-bottom: 3rem;
+  opacity: 0.9;
+}
+
+.newsletter-form {
+  display: flex;
+  gap: 1rem;
+  background: white;
+  padding: 0.5rem;
+  border-radius: 5rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+}
+
+.newsletter-form input {
+  flex: 1;
+  border: none;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  font-size: 1rem;
+  outline: none;
+}
+
+.newsletter-note {
+  font-size: 0.85rem !important;
+  opacity: 0.7 !important;
+  margin-bottom: 0 !important;
+}
+
+@media (max-width: 992px) {
+  .app-promo-content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .app-store-buttons {
+    justify-content: center;
+  }
+  .newsletter-card {
+    padding: 3rem 2rem;
+  }
+  .newsletter-card h2 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .app-promo-section {
+    padding: 3rem 2rem;
+  }
+  .phone-mockup {
+    width: 250px;
+    height: 500px;
+  }
+  .newsletter-form {
+    flex-direction: column;
+    background: transparent;
+    padding: 0;
+  }
+  .newsletter-form input {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}

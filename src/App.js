@@ -19,6 +19,7 @@ import Login from "./Components/Login";
 import SignUp from "./Components/SignUp";
 import { CartProvider } from "./Context/CartContext";
 import Announcement from "./Components/Announcement";
+import Categories from "./Components/Categories";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
                 element={
                   <>
                     <Home />
+                    <Categories />
                     <About />
                     <Work />
                     <Product />
